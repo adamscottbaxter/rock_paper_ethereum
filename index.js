@@ -13,13 +13,13 @@ window.addEventListener('load', function(){
     // getAddresses() //instead of this? Which returns the array with only first element! WTF
     // getAccount()
     getBalance()
-    web3.version.getNetwork(function(e,r){
-      if(r == 1){
-        console.log("MAINNET");
-      }else{
-        alert("Please Connect Metamask to Ethereum Main Net");
-      }
-    })
+    // web3.version.getNetwork(function(e,r){
+    //   if(r == 1){
+    //     console.log("MAINNET");
+    //   }else{
+    //     alert("Please Connect Metamask to Ethereum Main Net");
+    //   }
+    // })
   }
 })
 getBalance = function(){
@@ -30,8 +30,7 @@ getBalance = function(){
         schruteBucks.balanceOf.call(accounts[0],function(e,balance){
           if(balance){ 
             console.log('BALANCE: ', balance)
-        //     // document.getElementById('success').innerHTML = "Thank You";
-        //     getHoldingData();
+            document.getElementById('balance').innerHTML = balance.toNumber();
 
           }else{
             console.log(e)
