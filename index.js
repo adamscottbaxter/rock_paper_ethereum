@@ -26,6 +26,7 @@ getBalance = function(){
   web3.eth.getAccounts(function(e, accounts){
       if(accounts && accounts.length > 0){
         console.log('ACCOUNT: ', accounts[0])
+        document.getElementById('coinbase').innerHTML = accounts[0];
         // var userAddress = accounts[0];
         schruteBucks.balanceOf.call(accounts[0],function(e,balance){
           if(balance){ 
