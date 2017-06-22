@@ -43,3 +43,20 @@ getBalance = function(){
       }
     })
 }
+
+transfer = function(){
+        var transferAddress = document.getElementById('transfer-address').value;
+        var transferAmount = document.getElementById('transfer-amount').value;
+        var fromAddress = document.getElementById('coinbase').innerHTML;
+        var transferButton = document.getElementById('transfer-button');
+
+        console.log(transferAddress, transferAmount, fromAddress);
+        schruteBucks.transfer(transferAddress, transferAmount, {from: fromAddress}, function(e, response){
+          if (response) {
+            console.log(response);
+            document.getElementById('success-field').innerHTML = "Success"
+          }else{
+            console.log(e);
+          }
+        })
+}
